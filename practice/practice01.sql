@@ -12,7 +12,7 @@ select concat(first_name, ' ',last_name) as '이름', gender as '성별', hire_d
 select (select count(gender) from employees group by gender having gender = 'm') as '남성', (select count(gender) from employees group by gender having gender = 'f') as '여성';
 
 -- 4) 현재 근무하고 있는 직원 수는 몇 명입니까? (salaries 테이블을 사용합니다.)
-select count(to_date) as '직원 수' from titles group by to_date having to_date like '9999%';
+select count(to_date) as '직원 수' from salaries group by to_date having to_date like '9999%';
 
 -- 5) 부서는 총 몇 개가 있나요?
 select count(dept_name) as '부서 수' from departments;
