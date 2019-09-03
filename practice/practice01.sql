@@ -30,7 +30,7 @@ select count(distinct(emp_no)) as '명' from salaries where salary >= 120000 and
 select distinct(title) from titles order by length(title) desc;
 
 -- 10) 현재 Enginner 직책의 사원은 총 몇 명입니까?
-select count(title) from titles where title like '%engineer%';
+select count(title) from titles where title like 'engineer' and to_date like '9999%';
 
 -- 11) 사번이 13250(Zeydy)인 지원이 직책 변경 상황을 시간순으로 출력해보세요.
 select emp_no as '사번', title as '직책', from_date as '입사일', to_date as '변경일' from titles where emp_no = '13250' order by from_date;
