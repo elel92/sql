@@ -64,6 +64,7 @@ where a.emp_no = b.emp_no
   and a.emp_no = d.emp_no
   and b.to_date = '9999-01-01'
   and c.to_date = '9999-01-01'
+  and d.to_date = '9999-01-01'
   and d.dept_no = (select b.dept_no
 				   from salaries a, dept_emp b
                    where a.emp_no = b.emp_no
@@ -73,6 +74,7 @@ where a.emp_no = b.emp_no
                    order by avg(a.salary) desc
                    limit 0, 1)
 order by c.salary desc;
+
 
 -- 6) 평균 연봉이 가장 높은 부서는? 
 select c.dept_name as '부서'
